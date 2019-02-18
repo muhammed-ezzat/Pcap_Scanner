@@ -94,7 +94,7 @@ def main():
         exit(2)
     else:
         pck =args.file    
-    #pack = rdpcap("/home/muhammed/share/test.pcapng")
+    
     pack=rdpcap(pck)	
     list=host_ports(pack)
     os=dis_os(pack)
