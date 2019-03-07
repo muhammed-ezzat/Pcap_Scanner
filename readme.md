@@ -20,20 +20,20 @@
 
 ## A snippet of typical Pcap_Scanner output may look like this:
 
-	[+]    Host: 1.2.3.4    [+]
-	[+]    Open ports and services : {80: ('TCP', 'http'), 443: ('TCP', 'https')}     [+]
-	[+]    Possible OS =   Linux kernel 2.x    [+]
+	[*]    Host: 1.2.3.4    [*]
+	[*]    Open ports and services : {80: ('TCP', 'http'), 443: ('TCP', 'https')}     [*]
+	[*]    Possible OS =   Linux kernel 2.x    [*]
 
 
-	[+]    Host: 5.6.7.8    [+]
-	[+]    Open ports and services : {123: ('UDP', 'ntp')}     [+]
-	[+]    Possible OS =  OpenBSD    [+]
+	[*]    Host: 5.6.7.8    [*]
+	[*]    Open ports and services : {123: ('UDP', 'ntp')}     [*]
+	[*]    Possible OS =  OpenBSD    [*]
 
 
 
-	[+]    Host: 10.0.2.3    [+]
-	[+]    Open ports and services : {53: ('UDP', 'domain'), 22: ('TCP', 'ssh')}     [+]
-	[+]    Possible OS =  Windows:NT kernel 6.x     [+]
+	[*]    Host: 10.0.2.3    [*]
+	[*]    Open ports and services : {53: ('UDP', 'domain'), 22: ('TCP', 'ssh')}     [*]
+	[*]    Possible OS =  Windows:NT kernel 6.x     [*]
 
 
 
