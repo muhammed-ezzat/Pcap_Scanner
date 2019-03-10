@@ -11,7 +11,7 @@ def host_ports(pck):
         for pkt in pr:
             if pkt.getlayer(IP):
                 ip=pkt[IP].src
-                if pkt.getlayer(UDP):
+                if UDP in pkt:
                     port=pkt.sport
                     ips.setdefault(ip, {})
                     if ip in ips:
@@ -23,7 +23,7 @@ def host_ports(pck):
                             except:
                                 info_port=('UDP','not defined')
                             ips.setdefault(ip, {})[port] =info_port
-                elif pkt.getlayer(TCP):
+                elif TCP in pkt:
                     port=pkt.sport
                     ips.setdefault(ip, {})
                     if ip in ips:
@@ -35,13 +35,13 @@ def host_ports(pck):
                             except:
                                 info_port=('TCP','not defined')
                             ips.setdefault(ip, {})[port] =info_port
-                elif pkt.getlayer(ICMP):
+                elif ICMP in pkt:
 
                     info_port=('ICMP')
                     ips.setdefault(ip, {})[''] =info_port         
 
-    list=sorted(ips.items(), key=lambda x:x[1], reverse = True)
-    return list
+    lst=sorted(ips.items(), key=lambda x:x[1], reverse = True)
+    return lst
 def dis_os(pck):
     ttl =0
     win=0
@@ -99,9 +99,9 @@ def main():
         pck =args.file    
     
     	
-    list=host_ports(pck)
+    lst=host_ports(pck)
     os=dis_os(pck)
-    for host,port1 in list:
+    for host,port1 in lst:
         print("[*]    Host: "+host+"    [*]")
         print("[*]    Open ports and services :"),
         print (port1),
